@@ -1,0 +1,16 @@
+{
+  "name": "chatgpt-export",
+  "version": "1.0.0",
+  "main": "gpt2md.js",
+  "scripts": {
+    "build": "./build.js"
+  },
+  "type": "module",
+  "author": "Ramiro Gómez",
+  "description": "",
+  "dependencies": {
+    "esbuild": "0.17.18",
+    "esbuild-plugin-bookmarklet": "^1.0.0",
+    "html-to-md": "^0.8.3"
+  }
+}
