@@ -9,7 +9,7 @@ await esbuild.build({
   minify: true,
   outfile: 'dist/gpt2md.bookmarklet.js',
   plugins: [bookmarkletPlugin],
-  sourcemap: true,
+  sourcemap: false,
   target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
   write: false,
 })
