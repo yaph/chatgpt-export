@@ -6,8 +6,10 @@
     "build": "./build.js"
   },
   "type": "module",
-  "author": "Ramiro Gómez",
-  "description": "",
+  "homepage": "https://geeksta.net/tools/chatgpt-to-markdown/",
+  "author": "Ramiro Gómez (https://ramiro.org)",
+  "license": "MIT",
+  "description": "A browser bookmarklet for exporting conversations with ChatGPT as markdown files.",
   "dependencies": {
     "esbuild": "0.17.18",
     "esbuild-plugin-bookmarklet": "^1.0.0",
