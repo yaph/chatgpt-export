@@ -1,5 +1,6 @@
 data/
 dist/
+*.png
 
 # Logs
 logs
