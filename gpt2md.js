@@ -15,7 +15,7 @@ script.onload = function () {
 
     // Replace user profile images
     body.querySelectorAll('img[alt="User"]').forEach(n => {
-        const elt = n.parentNode.parentNode.parentNode.parentNode;
+        const elt = n.parentNode.parentNode.parentNode;
         elt.innerHTML = 'PROMPT:'
     });
 
