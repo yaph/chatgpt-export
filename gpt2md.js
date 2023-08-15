@@ -13,10 +13,28 @@ script.onload = function () {
     // Remove footer
     body.querySelector('.absolute.bottom-0').remove()
 
-    
+    // Replace user profile images
+    body.querySelectorAll('img[alt="User"]').forEach(n => {
+        const elt = n.parentNode.parentNode.parentNode;
+        elt.innerHTML = 'PROMPT:'
+    });
 
+    // Replace ChatGPT profile images
+    body.querySelectorAll('svg.h-6.w-6').forEach(n => {
+        const elt = n.parentNode.parentNode;
+        elt.innerHTML = 'RESPONSE:'
+    });
 
-    const html = Array.from(body.getElementsByTagName('main').item(0).children).filter(child => !child.innerHTML.includes('PROMPT:')).map(child => child.outerHTML).join('');
+    const html = Array.from(body.getElementsByTagName('main').item(0).children).filter(child => !child.innerHTML.includes('PROMPT:') && !child.innerHTML.includes('RESPONSE:')).map(child => child.outerHTML).join('');
+    });
+
+    // Replace ChatGPT profile images
+    body.querySelectorAll('svg.h-6.w-6').forEach(n => {
+        const elt = n.parentNode.parentNode;
+        elt.innerHTML = 'RESPONSE:'
+    });
+
+    const html = Array.from(body.getElementsByTagName('main').item(0).children).filter(child => !child.innerHTML.includes('PROMPT:') && !child.innerHTML.includes('RESPONSE:')).map(child => child.outerHTML).join('');
 
     // Convert to markdown
     const md = html2md(html);
