@@ -13,27 +13,23 @@ script.onload = function () {
     // Remove footer
     body.querySelector('.absolute.bottom-0').remove()
 
-    // Replace user profile images
-    body.querySelectorAll('img[alt="User"]').forEach(n => {
-        const elt = n.parentNode.parentNode.parentNode;
-        elt.innerHTML = 'PROMPT:'
+    // Iterate through main text containers and create text to export
+    let text = `# ${document.title}\n\n`;
+    body.querySelectorAll('.text-base').forEach((n, i) => {
+        const num = Math.trunc(i / 2) + 1;
+        if (n.querySelector('img[alt="User"]')) {
+            // Keep prompt text as it was entered
+            text += `## PROMPT ${num}\n\n${n.querySelector('.empty\\:hidden').innerHTML}\n\n`;
+        } else {
+            // Only convert response markup to markdown
+            text += `## RESPONSE ${num}\n\n${html2md(n.querySelector('.prose').innerHTML)}\n\n`;
+        }
     });
-
-    // Replace ChatGPT profile images
-    body.querySelectorAll('svg.h-6.w-6').forEach(n => {
-        const elt = n.parentNode.parentNode;
-        elt.innerHTML = 'RESPONSE:'
-    });
-
-    const html = body.getElementsByTagName('main').item(0).innerHTML;
-
-    // Convert to markdown
-    const md = html2md(html);
 
     // Download
     const a = document.createElement('a');
     a.download = `${document.title}.md`;
-    a.href = URL.createObjectURL(new Blob([md]));
+    a.href = URL.createObjectURL(new Blob([text]));
     a.style.display = 'none';
     document.body.appendChild(a);
     a.click();
