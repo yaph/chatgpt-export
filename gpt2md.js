@@ -15,7 +15,7 @@ script.onload = function () {
 
     // Iterate through main text containers and create text to export
     let text = `# ${document.title}\n\n`;
-    body.querySelectorAll('.text-base').forEach((n, i) => {
+    body.querySelectorAll('.p-4.text-base').forEach((n, i) => {
         const num = Math.trunc(i / 2) + 1;
         if (n.querySelector('img[alt="User"]')) {
             // Keep prompt text as it was entered
