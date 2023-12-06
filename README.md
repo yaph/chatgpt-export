@@ -10,8 +10,6 @@ Alternatively, if you prefer a more hands-on approach, you can clone this reposi
 
 ## How it works
 
-Once the bookmarklet link is clicked on a ChatGPT conversation page, it dynamically adds a script tag and loads the `html-to-md` JavaScript package. The `document.body` is then cloned and modified in the cloned version to remove any unnecessary information, ensuring a clean and concise output. Finally, the resulting HTML code is converted to markdown format and downloaded as a text file. The file is automatically named based on the conversation's title in the ChatGPT interface.
-
-Please note that the `html-to-md` package is loaded dynamically to avoid exceeding bookmarklet size limitations when including it in the compiled code.
+Once the bookmarklet link is clicked on a ChatGPT conversation page the `document.body` is cloned and modified in the cloned version to remove any unnecessary information, ensuring a clean and concise output. Finally, the resulting HTML code is converted to markdown format and downloaded as a text file. The file is automatically named based on the conversation's title in the ChatGPT interface.
 
 With the ChatGPT Export browser bookmarklet, archiving and sharing your ChatGPT conversations as markdown files becomes a seamless process, enhancing your productivity and collaboration.
