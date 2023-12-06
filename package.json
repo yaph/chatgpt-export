@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-export",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "gpt2md.js",
   "scripts": {
     "build": "./build.js"
@@ -13,6 +13,6 @@
   "dependencies": {
     "esbuild": "0.17.18",
     "esbuild-plugin-bookmarklet": "^1.0.0",
-    "html-to-md": "^0.8.3"
+    "turndown": "^7.1.2"
   }
 }
