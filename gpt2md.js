@@ -23,7 +23,7 @@ body.querySelectorAll('.text-message').forEach((n, i) => {
         text += `## RESPONSE ${num}\n\n${ts.turndown(prose.innerHTML)}\n\n`;
     } else {
         // Keep prompt text as it was entered
-        text += `## PROMPT ${num}\n\n${n.querySelector('div').innerHTML}\n\n`;
+        text += `## PROMPT ${num}\n\n${n.querySelector('div').innerText}\n\n`;
     }
 });
 
