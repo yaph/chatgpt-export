@@ -11,8 +11,8 @@
   "license": "MIT",
   "description": "A browser bookmarklet for exporting conversations with ChatGPT as markdown files.",
   "dependencies": {
-    "esbuild": "0.17.18",
+    "esbuild": "^0.17.19",
     "esbuild-plugin-bookmarklet": "^1.0.0",
-    "turndown": "^7.1.2"
+    "turndown": "^7.2.0"
   }
 }
