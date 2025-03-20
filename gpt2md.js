@@ -1,5 +1,10 @@
 const TurndownService = require('turndown');
-const ts = new TurndownService();
+const ts = new TurndownService({
+    'hr': '___________',
+    'preformattedCode': true,
+    'headingStyle': 'setext',
+    'codeBlockStyle': 'fenced'
+ });
 
 // Clone to not modify the actual `document.body` in the code that follows
 const body = document.body.cloneNode(true);
@@ -12,6 +17,11 @@ body.querySelectorAll('div .text-xs.gap-1').forEach(n => n.parentNode?.removeChi
 
 // Remove footer
 body.querySelector('.absolute.bottom-0').remove()
+
+// properly format code blocks
+body.querySelectorAll('.text-message pre').forEach((n) => {
+  n.innerHTML = n.querySelector('code').outerHTML;
+});
 
 // Iterate through main text containers and create text to export
 let text = `# ${document.title}\n\n`;
