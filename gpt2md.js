@@ -1,10 +1,12 @@
 const TurndownService = require('turndown');
+const tables = require('turndown-plugin-gfm').tables;
 const ts = new TurndownService({
     'hr': '___________',
     'preformattedCode': true,
     'headingStyle': 'setext',
     'codeBlockStyle': 'fenced'
  });
+ts.use(tables);
 
 // Clone to not modify the actual `document.body` in the code that follows
 const body = document.body.cloneNode(true);
