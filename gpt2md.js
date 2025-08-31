@@ -18,7 +18,7 @@ body.querySelectorAll('pre .text-xs').forEach(n => n.parentNode?.removeChild(n))
 body.querySelectorAll('div .text-xs.gap-1').forEach(n => n.parentNode?.removeChild(n));
 
 // Remove footer
-body.querySelector('.absolute.bottom-0').remove()
+body.querySelector('#thread-bottom-container').remove()
 
 // properly format code blocks
 body.querySelectorAll('.text-message pre').forEach((n) => {
